@@ -12,6 +12,8 @@ class AppStrings {
       fullnameHint = "Enter your name here...",
       confirmPassword = "Confirm Password",
       forgetPassword = "Forget Password",
+      welcome = "Welcome..",
+      search = "Search Doctor",
       login = "Login",
       signup = "Signup",
       alreadyHaveAccount = "Already have an account?",

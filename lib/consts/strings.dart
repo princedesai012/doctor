@@ -1,3 +1,5 @@
+import 'package:doctor/consts/consts.dart';
+
 class AppStrings {
   static String appname = "Mediapp",
       bestDocapp = "Best Doctor\n Appointment App",
@@ -17,5 +19,11 @@ class AppStrings {
       login = "Login",
       signup = "Signup",
       alreadyHaveAccount = "Already have an account?",
-      dontHaveAccount = "Don't have an account?";
+      dontHaveAccount = "Don't have an account?",
+      body = "Body",
+      ear = "Ear",
+      lungs = "Lungs",
+      liver = "Liver",
+      heart = "Heart",
+      kidney = "Kidney";
 }

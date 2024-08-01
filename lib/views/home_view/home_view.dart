@@ -1,3 +1,4 @@
+import 'package:doctor/consts/lists.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
 
 import '../../consts/consts.dart';
@@ -42,31 +43,93 @@ class HomeView extends StatelessWidget {
                 SizedBox(
                   height: 80,
                   child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                       itemCount: 6,
                       itemBuilder: (BuildContext contex, int index){
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          margin: const EdgeInsets.only(right: 8),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                  AppAssets.icBody,
+                        return GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.blueColor,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            padding: const EdgeInsets.all(12),
+                            margin: const EdgeInsets.only(right: 8),
+                            child:Column(
+                              children: [
+                                Image.asset(
+                                  iconsList[index],
                                   width: 30,
-                              ),
-                              5.heightBox,
-                              AppStyle.normal(title: "Body", color: AppColors.white, size: AppSizes.size14)
-                            ],
-                          ),
+                                ),
+                                5.heightBox,
+                                AppStyle.normal(title: iconsTitleList[index], color: AppColors.white, size: AppSizes.size14),
+                              ],
+                            ),
+                        ),
                         );
                       }
                           ,
                 )
                 ),
+                25.heightBox,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: AppStyle.bold(title: "Popular Doctors", color: AppColors.blueColor, size: AppSizes.size22),,
+                ),
+                10.heightBox,
+                SizedBox(
+                  height: 170,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                      itemBuilder: (BuildContext contex, int index){
+                        return Container(
+                          clipBehavior: Clip.hardEdge,
+                          decoration: BoxDecoration(
+                            color: AppColors.bgDarkColor,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          margin: EdgeInsets.only(right: 5),
+                          height: 100,
+                          width: 160,
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 150,
+                                alignment: Alignment.center,
+                                color: Colors.blue,
+                                child: Image.asset(AppAssets.icSignup,
+                                  width: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              5.heightBox,
+                              AppStyle.normal(title: "Dr. Hiren Bhatt"),
+                              5.heightBox,
+                              AppStyle.normal(title: "Category", color: Colors.black54),
+
+                            ],
+                          ),
+                        );
+                      },
+                  ),
+                ),
+                5.heightBox,
+                GestureDetector(
+                  onTap: () {},
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: AppStyle.normal(title: "View All", color: AppColors.blueColor),
+                  ),
+                ),
+                Row(
+                  children: List.generate(4, (index) => Container(
+                    child: Column(),
+                  )
+                  )
+                )
               ],
             ),
           )],

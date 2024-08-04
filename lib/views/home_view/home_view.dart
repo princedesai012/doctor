@@ -2,8 +2,8 @@ import 'package:doctor/consts/lists.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
 
 import '../../consts/consts.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/container.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/src/widgets/container.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -75,7 +75,7 @@ class HomeView extends StatelessWidget {
                 25.heightBox,
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: AppStyle.bold(title: "Popular Doctors", color: AppColors.blueColor, size: AppSizes.size22),,
+                  child: AppStyle.bold(title: "Popular Doctors", color: AppColors.blueColor, size: AppSizes.size22),
                 ),
                 10.heightBox,
                 SizedBox(
@@ -91,7 +91,7 @@ class HomeView extends StatelessWidget {
                             color: AppColors.bgDarkColor,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          margin: EdgeInsets.only(right: 5),
+                          margin: const EdgeInsets.only(right: 5),
                           height: 100,
                           width: 160,
                           child: Column(
@@ -124,9 +124,22 @@ class HomeView extends StatelessWidget {
                     child: AppStyle.normal(title: "View All", color: AppColors.blueColor),
                   ),
                 ),
+                0.heightBox,
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(4, (index) => Container(
-                    child: Column(),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.blue,
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      children: [
+                        Image.asset(AppAssets.icBody, width: 25, color: AppColors.white,),
+                        5.heightBox,
+                        AppStyle.bold(title: "Lab Tests", color: AppColors.white)
+                      ],
+                    ),
                   )
                   )
                 )

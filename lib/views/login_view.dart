@@ -5,6 +5,8 @@ import 'package:doctor/views/home_view/home_view.dart';
 import 'package:doctor/views/signup_view/signup_view.dart';
 import 'package:get/get.dart';
 
+import 'home_view/home.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -12,7 +14,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(top: 40),
+        margin: const EdgeInsets.only(top: 40),
         padding: const EdgeInsets.all(8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -51,7 +53,7 @@ class LoginView extends StatelessWidget {
                 ),
                 20.heightBox,
                 CustomButton(buttonText: AppStrings.login, onTap: () {
-                  Get.to(()=>HomeView());
+                  Get.to(()=>const Home());
                 }),
                 20.heightBox,
                 Row(

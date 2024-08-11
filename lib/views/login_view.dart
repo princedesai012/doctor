@@ -14,8 +14,8 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: const EdgeInsets.only(top: 40),
-        padding: const EdgeInsets.all(8),
+        //margin: const EdgeInsets.only(top: 40),
+        //padding: const EdgeInsets.all(8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -25,14 +25,31 @@ class LoginView extends StatelessWidget {
                 SingleChildScrollView(
                     child: Column(
                   children: [
-                    Image.asset(
-                      AppAssets.icLogin,
-                      width: 200,
+                    Container(
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
+                      ),
+                      height: 310,
+                      width: 1375,
+                      child: Image.asset(
+                        AppAssets.icLogin,
+                        width: 200,
+                      ),
                     ),
-                    10.heightBox,
-                    AppStyle.bold(
-                        title: AppStrings.welcomeBack, size: AppSizes.size20),
-                    AppStyle.bold(title: AppStrings.weAreExcited),
+                    Container(
+                      width: 1380,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
+                      ),
+                      child: AppStyle.bold(title: AppStrings.welcomeBack, size: AppSizes.size20, alignment: TextAlign.center),
+                    ),
+                    Container(
+                      width: 1380,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
+                      ),
+                      child: AppStyle.bold(title: AppStrings.weAreExcited, alignment: TextAlign.center),
+                    )
                   ],
                 )),
               ],

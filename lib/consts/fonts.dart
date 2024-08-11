@@ -1,5 +1,4 @@
 import 'package:doctor/res/components/custom_button.dart';
-import 'package:flutter/services.dart';
 
 import 'colors.dart';
 import 'consts.dart';

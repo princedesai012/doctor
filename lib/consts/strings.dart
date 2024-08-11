@@ -18,6 +18,7 @@ class AppStrings {
       search = "Search Doctor",
       login = "Login",
       signup = "Signup",
+      settings = "Settings",
       alreadyHaveAccount = "Already have an account?",
       dontHaveAccount = "Don't have an account?",
       body = "Body",
@@ -25,5 +26,8 @@ class AppStrings {
       lungs = "Lungs",
       liver = "Liver",
       heart = "Heart",
-      kidney = "Kidney";
+      kidney = "Kidney",
+      changePassword = "Change PassWord",
+      termsConditions = "Terms & Condition",
+      signout = "Sign Out";
 }

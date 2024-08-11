@@ -1,5 +1,7 @@
 import 'package:doctor/consts/lists.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
+import 'package:doctor/views/doctor_profile_view/doctor_profile_view.dart';
+import 'package:get/get.dart';
 
 import '../../consts/consts.dart';
 // import 'package:flutter/src/widgets/framework.dart';
@@ -85,32 +87,37 @@ class HomeView extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 3,
                       itemBuilder: (BuildContext contex, int index){
-                        return Container(
-                          clipBehavior: Clip.hardEdge,
-                          decoration: BoxDecoration(
-                            color: AppColors.bgDarkColor,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          margin: const EdgeInsets.only(right: 5),
-                          height: 100,
-                          width: 160,
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 150,
-                                alignment: Alignment.center,
-                                color: Colors.blue,
-                                child: Image.asset(AppAssets.icSignup,
-                                  width: 100,
-                                  fit: BoxFit.cover,
+                        return GestureDetector(
+                          onTap: (){
+                            Get.to(() =>const DoctorProfileView());
+                          },
+                          child: Container(
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                              color: AppColors.bgDarkColor,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            margin: const EdgeInsets.only(right: 5),
+                            height: 100,
+                            width: 160,
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 150,
+                                  alignment: Alignment.center,
+                                  color: Colors.blue,
+                                  child: Image.asset(AppAssets.icSignup,
+                                    width: 100,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                              5.heightBox,
-                              AppStyle.normal(title: "Dr. Hiren Bhatt"),
-                              5.heightBox,
-                              AppStyle.normal(title: "Category", color: Colors.black54),
-
-                            ],
+                                5.heightBox,
+                                AppStyle.normal(title: "Dr. Hiren Bhatt"),
+                                5.heightBox,
+                                AppStyle.normal(title: "Category", color: Colors.black54),
+                          
+                              ],
+                            ),
                           ),
                         );
                       },

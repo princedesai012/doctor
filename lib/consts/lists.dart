@@ -1,3 +1,4 @@
+import 'package:doctor/consts/consts.dart';
 import 'package:doctor/consts/strings.dart';
 
 import 'images.dart';
@@ -19,4 +20,16 @@ var iconsTitleList = [
   AppStrings.heart,
   AppStrings.liver,
   AppStrings.kidney,
+];
+
+var settingsList = [
+  AppStrings.forgetPassword,
+  AppStrings.changePassword,
+  AppStrings.signout,
+];
+
+var settingsListIcon = [
+  Icons.lock,
+  Icons.note,
+  Icons.logout,
 ];

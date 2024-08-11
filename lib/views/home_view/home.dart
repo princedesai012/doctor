@@ -1,5 +1,7 @@
 import 'package:doctor/consts/consts.dart';
+import 'package:doctor/views/doctor_profile_view/doctor_profile_view.dart';
 import 'package:doctor/views/home_view/home_view.dart';
+import 'package:doctor/views/settings_view/settings_view.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,12 +17,8 @@ class _HomeState extends State<Home> {
     Container(
         color: Colors.red,
     ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    const DoctorProfileView(),
+    const SettingsView(),
   ];
   @override
   Widget build(BuildContext context) {

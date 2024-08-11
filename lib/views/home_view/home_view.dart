@@ -64,7 +64,7 @@ class HomeView extends StatelessWidget {
                                   iconsList[index],
                                   width: 30,
                                 ),
-                                5.heightBox,
+                                0.8.heightBox,
                                 AppStyle.normal(title: iconsTitleList[index], color: AppColors.white, size: AppSizes.size14),
                               ],
                             ),

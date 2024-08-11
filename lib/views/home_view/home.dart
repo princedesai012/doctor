@@ -1,4 +1,5 @@
 import 'package:doctor/consts/consts.dart';
+import 'package:doctor/views/category_view/category_view.dart';
 import 'package:doctor/views/doctor_profile_view/doctor_profile_view.dart';
 import 'package:doctor/views/home_view/home_view.dart';
 import 'package:doctor/views/settings_view/settings_view.dart';
@@ -14,9 +15,7 @@ class _HomeState extends State<Home> {
   int selectedIndex = 0;
   List screenList = [
     const HomeView(),
-    Container(
-        color: Colors.red,
-    ),
+    const CategoryView(),
     const DoctorProfileView(),
     const SettingsView(),
   ];

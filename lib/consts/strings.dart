@@ -1,7 +1,5 @@
-import 'package:doctor/consts/consts.dart';
-
 class AppStrings {
-  static String appname = "Mediapp",
+  static String appname = "DocTime",
       bestDocapp = "Best Doctor\n Appointment App",
       welcomeBack = "Welcome Back!",
       weAreExcited = "We're excited to have you back!",
@@ -14,11 +12,13 @@ class AppStrings {
       fullnameHint = "Enter your name here...",
       confirmPassword = "Confirm Password",
       forgetPassword = "Forget Password",
-      welcome = "Welcome..",
+      welcome = "Welcome",
       search = "Search Doctor",
       login = "Login",
-      signup = "Signup",
+      category = "Category",
+      doctor = "Doctor Login",
       settings = "Settings",
+      signup = "Signup",
       alreadyHaveAccount = "Already have an account?",
       dontHaveAccount = "Don't have an account?",
       body = "Body",

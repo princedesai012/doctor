@@ -1,7 +1,9 @@
 import 'package:doctor/consts/consts.dart';
+import 'package:doctor/views/appointment_view/appointment_view.dart';
+import 'package:doctor/views/book_appointment_view/book_appointment_view.dart';
 import 'package:doctor/views/category_view/category_view.dart';
-import 'package:doctor/views/doctor_profile_view/doctor_profile_view.dart';
 import 'package:doctor/views/home_view/home_view.dart';
+import 'package:doctor/views/login_view.dart';
 import 'package:doctor/views/settings_view/settings_view.dart';
 
 class Home extends StatefulWidget {
@@ -15,8 +17,9 @@ class _HomeState extends State<Home> {
   int selectedIndex = 0;
   List screenList = [
     const HomeView(),
+    const AppointmentView(),
     const CategoryView(),
-    const DoctorProfileView(),
+    const LoginView(),
     const SettingsView(),
   ];
   @override
@@ -42,6 +45,7 @@ class _HomeState extends State<Home> {
           },
           items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.note), label: "Appointment"),
           BottomNavigationBarItem(icon: Icon(Icons.category), label: "Category"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Doctor"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),

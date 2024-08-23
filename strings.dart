@@ -1,4 +1,3 @@
-import 'package:doctor/consts/consts.dart';
 
 class AppStrings {
   static String appname = "DocTime",

@@ -1,6 +1,5 @@
 import 'package:doctor/consts/consts.dart';
 
-import '../../res/components/custom_textfield.dart';
 
 class AppointmentDetailsView extends StatelessWidget {
   const AppointmentDetailsView({super.key});

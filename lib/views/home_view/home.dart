@@ -1,6 +1,5 @@
 import 'package:doctor/consts/consts.dart';
 import 'package:doctor/views/appointment_view/appointment_view.dart';
-import 'package:doctor/views/book_appointment_view/book_appointment_view.dart';
 import 'package:doctor/views/category_view/category_view.dart';
 import 'package:doctor/views/home_view/home_view.dart';
 import 'package:doctor/views/login_view.dart';

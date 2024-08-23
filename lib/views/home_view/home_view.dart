@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
         title: AppStyle.bold(title: "${AppStrings.welcome} User", color: AppColors.white, size: AppSizes.size18),
       ),
       body: Column(
-        children: <Widget>[
+        children: [
           Container(
             padding: const EdgeInsets.all(10),
             color: AppColors.blueColor,
@@ -134,7 +134,7 @@ class HomeView extends StatelessWidget {
                 0.heightBox,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: List.generate(4, (index) => Container(
+                  children: List.generate(3, (index) => Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.blue,

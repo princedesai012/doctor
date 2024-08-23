@@ -16,7 +16,8 @@ class _CustomTextfieldState extends State<CustomTextfield> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: AppColors.white,
+      controller: widget.textController,
+      cursorColor: AppColors.blueColor,
       decoration: InputDecoration(
         isDense: true,
         focusedBorder: OutlineInputBorder(

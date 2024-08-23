@@ -6,6 +6,7 @@ import '../../consts/consts.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});
+  @override
   build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

@@ -1,7 +1,5 @@
 import 'package:doctor/consts/consts.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../res/components/custom_button.dart';
 

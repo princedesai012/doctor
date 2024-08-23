@@ -1,6 +1,4 @@
-import 'package:doctor/res/components/custom_button.dart';
 
-import 'colors.dart';
 import 'consts.dart';
 class AppFonts{
   static String nunito = "nunito", nunitoBold = "nunito_bold";

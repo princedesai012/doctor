@@ -1,7 +1,5 @@
 import 'package:doctor/consts/consts.dart';
-import 'package:doctor/consts/strings.dart';
 
-import 'images.dart';
 
 var iconsList = [
   AppAssets.icBody,

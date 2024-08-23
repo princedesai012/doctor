@@ -1,13 +1,18 @@
+import 'package:doctor/controllers/auth_controller.dart';
 import 'package:doctor/res/components/custom_button.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
 import 'package:doctor/consts/consts.dart';
+import 'package:doctor/views/home_view/home_view.dart';
 import 'package:get/get.dart';
+
+import '../home_view/home.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(AuthController());
     return Scaffold(
       body: Container(
         // margin: const EdgeInsets.only(bottom: 10),
@@ -54,14 +59,20 @@ class SignupView extends StatelessWidget {
                     child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            CustomTextfield(hint: AppStrings.fullname),
+                            CustomTextfield(hint: AppStrings.fullname, textController: controller.fullnameController,),
                             20.heightBox,
-                            CustomTextfield(hint: AppStrings.email),
+                            CustomTextfield(hint: AppStrings.email, textController: controller.emailController,),
                             20.heightBox,
-                            CustomTextfield(hint: AppStrings.password),
+                            CustomTextfield(hint: AppStrings.password, textController: controller.passwordController,),
                             20.heightBox,
                             20.heightBox,
-                            CustomButton(buttonText: AppStrings.signup, onTap: () {}),
+                            CustomButton(buttonText: AppStrings.signup,
+                                onTap: () async{
+                              await controller.signupUser();
+                              if(controller.userCredential != null){
+                                Get.offAll(() => const Home());
+                              }
+                            }),
                             20.heightBox,
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,

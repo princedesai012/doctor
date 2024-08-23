@@ -1,17 +1,23 @@
+import 'package:doctor/controllers/auth_controller.dart';
 import 'package:doctor/res/components/custom_button.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
 import 'package:doctor/consts/consts.dart';
-import 'package:doctor/views/home_view/home_view.dart';
 import 'package:doctor/views/signup_view/signup_view.dart';
 import 'package:get/get.dart';
 
 import 'home_view/home.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
   @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+  @override
   Widget build(BuildContext context) {
+    var controller = Get.put(AuthController());
     return Scaffold(
       body: Container(
         //margin: const EdgeInsets.only(top: 40),
@@ -60,17 +66,21 @@ class LoginView extends StatelessWidget {
                     child: SingleChildScrollView(
                         child: Column(
               children: [
-                CustomTextfield(hint: AppStrings.email),
+                CustomTextfield(hint: AppStrings.email, textController: controller.emailController,),
                 20.heightBox,
-                CustomTextfield(hint: AppStrings.password),
+                CustomTextfield(hint: AppStrings.password, textController: controller.passwordController,),
                 20.heightBox,
                 Align(
                   alignment: Alignment.centerRight,
                   child: AppStyle.normal(title: AppStrings.forgetPassword),
                 ),
                 20.heightBox,
-                CustomButton(buttonText: AppStrings.login, onTap: () {
-                  Get.to(()=>const Home());
+                CustomButton(buttonText: AppStrings.login,
+                    onTap: () async{
+                  await controller.loginUser();
+                  if(controller.userCredential != null){
+                    Get.to(()=>const Home());
+                  }
                 }),
                 20.heightBox,
                 Row(

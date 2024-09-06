@@ -13,6 +13,17 @@ class AuthController extends GetxController{
   var passwordController = TextEditingController();
   UserCredential? userCredential;
 
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  forgetpassword({email}) async {
+    try {
+      await auth.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+
   isUserAlreadyLoggedIn() async{
     await FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if(user != null){

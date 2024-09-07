@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor/consts/lists.dart';
+import 'package:doctor/controllers/home_controller.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
 import 'package:doctor/views/doctor_profile_view/doctor_profile_view.dart';
 import 'package:get/get.dart';
@@ -12,6 +14,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(HomeController());
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -80,49 +84,63 @@ class HomeView extends StatelessWidget {
                   child: AppStyle.bold(title: "Popular Doctors", color: AppColors.blueColor, size: AppSizes.size22),
                 ),
                 10.heightBox,
-                SizedBox(
-                  height: 170,
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 3,
-                      itemBuilder: (BuildContext contex, int index){
-                        return GestureDetector(
-                          onTap: (){
-                            Get.to(() =>const DoctorProfileView());
-                          },
-                          child: Container(
-                            clipBehavior: Clip.hardEdge,
-                            decoration: BoxDecoration(
-                              color: AppColors.bgDarkColor,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            margin: const EdgeInsets.only(right: 5),
-                            height: 100,
-                            width: 160,
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 150,
-                                  alignment: Alignment.center,
-                                  color: Colors.blue,
-                                  child: Image.asset(AppAssets.icSignup,
-                                    width: 100,
-                                    fit: BoxFit.cover,
+                FutureBuilder<QuerySnapshot>(
+                    future: controller.getDoctorList(),
+
+                    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+                      if(!snapshot.hasData){
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }else{
+                        var data = snapshot.data?.docs;
+                        return SizedBox(
+                          height: 170,
+                          child: ListView.builder(
+                            physics: const BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: data?.length ?? 0,
+                            itemBuilder: (BuildContext contex, int index){
+                              return GestureDetector(
+                                onTap: (){
+                                  Get.to(() => DoctorProfileView(doc: data[index]));
+                                },
+                                child: Container(
+                                  clipBehavior: Clip.hardEdge,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.bgDarkColor,
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  margin: const EdgeInsets.only(right: 5),
+                                  height: 100,
+                                  width: 160,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 150,
+                                        alignment: Alignment.center,
+                                        color: Colors.blue,
+                                        child: Image.asset(AppAssets.icSignup,
+                                          width: 100,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      5.heightBox,
+                                      AppStyle.normal(title: data![index]['docName']),
+                                      5.heightBox,
+                                      AppStyle.normal(title: data[index]['docCategory'], color: Colors.black54),
+
+                                    ],
                                   ),
                                 ),
-                                5.heightBox,
-                                AppStyle.normal(title: "Dr. Hiren Bhatt"),
-                                5.heightBox,
-                                AppStyle.normal(title: "Category", color: Colors.black54),
-                          
-                              ],
-                            ),
+                              );
+                            },
                           ),
                         );
-                      },
-                  ),
+                      }
+                    },
                 ),
+
                 5.heightBox,
                 GestureDetector(
                   onTap: () {},

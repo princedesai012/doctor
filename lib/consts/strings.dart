@@ -23,6 +23,7 @@ class AppStrings {
       dontHaveAccount = "Don't have an account?",
       body = "Body",
       ear = "Ear",
+      eye = "Eye",
       lungs = "Lungs",
       liver = "Liver",
       heart = "Heart",

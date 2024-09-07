@@ -14,10 +14,11 @@ var iconsList = [
 var iconsTitleList = [
   AppStrings.body,
   AppStrings.ear,
-  AppStrings.lungs,
+  AppStrings.eye,
   AppStrings.heart,
-  AppStrings.liver,
   AppStrings.kidney,
+  AppStrings.liver,
+  AppStrings.lungs,
 ];
 
 var settingsList = [

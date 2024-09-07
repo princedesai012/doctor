@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doctor/consts/consts.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
+  var searchQueryController = TextEditingController();
   var isLoading = false.obs;
 
   Future<QuerySnapshot<Map<String,dynamic>>> getDoctorList() async{

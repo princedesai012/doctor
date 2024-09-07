@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
       height: 44,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            shape: const StadiumBorder()
+            shape: const StadiumBorder(),
         ),
         onPressed: onTap,
         child: buttonText.text.make(),

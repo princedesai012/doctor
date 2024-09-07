@@ -15,6 +15,9 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+
+  var isDoctor = false;
+
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(AuthController());
@@ -69,6 +72,18 @@ class _LoginViewState extends State<LoginView> {
                 CustomTextfield(hint: AppStrings.email, textController: controller.emailController,),
                 20.heightBox,
                 CustomTextfield(hint: AppStrings.password, textController: controller.passwordController,),
+                10.heightBox,
+                SwitchListTile(value: isDoctor, onChanged: (newValue){
+                  setState(() {
+                    isDoctor = newValue;
+                  });
+                },title: "Sign is as a Doctor".text.make(),),
+
+
+
+
+
+                // Continuee....................................
                 20.heightBox,
                 Align(
                   alignment: Alignment.centerRight,

@@ -7,16 +7,22 @@ import 'package:get/get.dart';
 
 import '../home_view/home.dart';
 
-class SignupView extends StatelessWidget {
+class SignupView extends StatefulWidget {
   const SignupView({super.key});
 
+  @override
+  State<SignupView> createState() => _SignupViewState();
+}
+
+class _SignupViewState extends State<SignupView> {
+  var isDoctor = false;
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(AuthController());
     return Scaffold(
       body: Container(
-        // margin: const EdgeInsets.only(bottom: 10),
-        // padding: const EdgeInsets.only(bottom: 8),
+        margin: const EdgeInsets.only(top: 40),
+        padding: const EdgeInsets.all(8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -59,16 +65,60 @@ class SignupView extends StatelessWidget {
                     child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            CustomTextfield(hint: AppStrings.fullname, textController: controller.fullnameController,),
+                            CustomTextfield(
+                              hint: AppStrings.fullname,
+                              textController: controller.fullnameController,),
                             20.heightBox,
-                            CustomTextfield(hint: AppStrings.email, textController: controller.emailController,),
+                            CustomTextfield(
+                              hint: AppStrings.email,
+                              textController: controller.emailController,),
                             20.heightBox,
-                            CustomTextfield(hint: AppStrings.password, textController: controller.passwordController,),
+                            CustomTextfield(
+                              hint: AppStrings.password,
+                              textController: controller.passwordController,),
+                            20.heightBox,
+                            SwitchListTile(title: "Sign up as a Doctor".text.make(),value: isDoctor, onChanged: (newValue){
+                              setState(() {
+                                isDoctor = newValue;
+                              });
+                            }),
+                            Visibility(
+                              visible: isDoctor,
+                              child: Column(
+                                children: [
+                                  CustomTextfield(
+                                    hint: "About",
+                                    textController: controller.aboutController,),
+                                  20.heightBox,
+                                  CustomTextfield(
+                                    hint: "Category",
+                                    textController: controller.categoryController,),
+                                  20.heightBox,
+                                  CustomTextfield(
+                                    hint: "Services",
+                                    textController: controller.servicesController,),
+                                  20.heightBox,
+                                  CustomTextfield(
+                                    hint: "Address",
+                                    textController: controller.addressController,),
+                                  20.heightBox,
+                                  CustomTextfield(
+                                    hint: "Phone Number",
+                                    textController: controller.phoneController,),
+                                  20.heightBox,
+                                  CustomTextfield(
+                                    hint: "Timing",
+                                    textController: controller.timingController,),
+                                  20.heightBox, 
+                                ],
+                              ),
+                            ),
+
                             20.heightBox,
                             20.heightBox,
                             CustomButton(buttonText: AppStrings.signup,
                                 onTap: () async{
-                              await controller.signupUser();
+                              await controller.signupUser(isDoctor);
                               if(controller.userCredential != null){
                                 Get.offAll(() => const Home());
                               }

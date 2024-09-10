@@ -2,6 +2,7 @@ import 'package:doctor/controllers/auth_controller.dart';
 import 'package:doctor/res/components/custom_button.dart';
 import 'package:doctor/res/components/custom_textfield.dart';
 import 'package:doctor/consts/consts.dart';
+import 'package:doctor/views/appointment_view/appointment_view.dart';
 import 'package:doctor/views/signup_view/signup_view.dart';
 import 'package:get/get.dart';
 
@@ -94,7 +95,13 @@ class _LoginViewState extends State<LoginView> {
                     onTap: () async{
                   await controller.loginUser();
                   if(controller.userCredential != null){
-                    Get.to(()=>const Home());
+                    if(isDoctor){
+                      //signing as a doctor
+                      Get.to(()=>const AppointmentView());
+                    }else{
+                      //signing as a user
+                      Get.to(()=>const Home());
+                    }
                   }
                 }),
                 20.heightBox,

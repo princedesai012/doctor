@@ -5,7 +5,8 @@ import 'package:doctor/views/appointment_details_view/appointment_details_view.d
 import 'package:get/get.dart';
 
 class AppointmentView extends StatelessWidget {
-  const AppointmentView({super.key});
+  final bool isDoctor;
+  const AppointmentView({super.key, this.isDoctor = false});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class AppointmentView extends StatelessWidget {
         title: AppStyle.bold(title: "Appointments", color: AppColors.white, size: AppSizes.size20),
       ),
       body: FutureBuilder<QuerySnapshot>(
-        future: controller.getAppointments(),
+        future: controller.getAppointments(isDoctor),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
           if(!snapshot.hasData){
             return const Center(
@@ -34,8 +35,10 @@ class AppointmentView extends StatelessWidget {
                         Get.to(() => AppointmentDetailsView(doc: data[index],));
                       },
                       leading: CircleAvatar(child: Image.asset(AppStrings.login),),
-                      title: AppStyle.bold(title: data![index]['appWithName']),
-                      subtitle: AppStyle.normal(title: "${data[index]['appDay']} - ${data[index]['appTime']}", color: AppColors.textColor.withOpacity(0.5)),
+                      title: AppStyle.bold(title: data![index][isDoctor ? 'appWithName' : 'appName']),
+                      subtitle: AppStyle.normal(
+                          title: "${data[index]['appDay']} - ${data[index]['appTime']}",
+                          color: AppColors.textColor.withOpacity(0.5)),
                     );
                   }
               ),

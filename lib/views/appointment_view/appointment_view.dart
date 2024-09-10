@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor/consts/consts.dart';
 import 'package:doctor/controllers/appointment_controller.dart';
+import 'package:doctor/controllers/auth_controller.dart';
 import 'package:doctor/views/appointment_details_view/appointment_details_view.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,11 @@ class AppointmentView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: AppStyle.bold(title: "Appointments", color: AppColors.white, size: AppSizes.size20),
+        actions: [
+          IconButton(onPressed: (){
+            AuthController().signout();
+          }, icon: const Icon(Icons.power_settings_new_rounded))
+        ],
       ),
       body: FutureBuilder<QuerySnapshot>(
         future: controller.getAppointments(isDoctor),

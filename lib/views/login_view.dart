@@ -79,12 +79,6 @@ class _LoginViewState extends State<LoginView> {
                     isDoctor = newValue;
                   });
                 },title: "Sign is as a Doctor".text.make(),),
-
-
-
-
-
-                // Continuee....................................
                 20.heightBox,
                 Align(
                   alignment: Alignment.centerRight,

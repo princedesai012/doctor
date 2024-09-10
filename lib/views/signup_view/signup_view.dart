@@ -5,6 +5,7 @@ import 'package:doctor/consts/consts.dart';
 import 'package:doctor/views/home_view/home_view.dart';
 import 'package:get/get.dart';
 
+import '../appointment_view/appointment_view.dart';
 import '../home_view/home.dart';
 
 class SignupView extends StatefulWidget {
@@ -120,7 +121,13 @@ class _SignupViewState extends State<SignupView> {
                                 onTap: () async{
                               await controller.signupUser(isDoctor);
                               if(controller.userCredential != null){
-                                Get.offAll(() => const Home());
+                                if(isDoctor){
+                                  //signing as a doctor
+                                  Get.to(()=>const AppointmentView());
+                                }else{
+                                  //signing as a user
+                                  Get.to(()=>const Home());
+                                }
                               }
                             }),
                             20.heightBox,

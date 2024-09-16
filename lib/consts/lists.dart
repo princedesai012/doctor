@@ -9,6 +9,7 @@ var iconsList = [
   AppAssets.icKidney,
   AppAssets.icLiver,
   AppAssets.icLungs,
+  AppAssets.icLogo,
 ];
 
 var iconsTitleList = [
@@ -19,6 +20,7 @@ var iconsTitleList = [
   AppStrings.kidney,
   AppStrings.liver,
   AppStrings.lungs,
+  AppStrings.logo,
 ];
 
 var settingsList = [

@@ -35,12 +35,12 @@ class AppointmentController extends GetxController{
     if(isDoctor){
       return FirebaseFirestore.instance
           .collection('appointments')
-          .where('appWith', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
+          .where('appBy', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
           .get();
     }else{
       return FirebaseFirestore.instance
           .collection('appointments')
-          .where('appBy', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
+          .where('appWith', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
           .get();
     }
   }

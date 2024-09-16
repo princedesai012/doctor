@@ -40,7 +40,7 @@ class AppointmentView extends StatelessWidget {
                       onTap: () {
                         Get.to(() => AppointmentDetailsView(doc: data[index],));
                       },
-                      leading: CircleAvatar(child: Image.asset(AppStrings.login),),
+                      leading: CircleAvatar(child: Image.asset(AppAssets.icLogin),),
                       title: AppStyle.bold(title: data![index][isDoctor ? 'appWithName' : 'appName']),
                       subtitle: AppStyle.normal(
                           title: "${data[index]['appDay']} - ${data[index]['appTime']}",

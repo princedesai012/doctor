@@ -30,5 +30,6 @@ class AppStrings {
       kidney = "Kidney",
       changePassword = "Change PassWord",
       termsConditions = "Terms & Condition",
-      signout = "Sign Out";
+      signout = "Sign Out",
+      logo = "Logo";
 }

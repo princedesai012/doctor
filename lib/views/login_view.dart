@@ -36,29 +36,29 @@ class _LoginViewState extends State<LoginView> {
                     child: Column(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
-                      ),
-                      height: 310,
-                      width: 1375,
+                      // decoration: const BoxDecoration(
+                      //     gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
+                      // ),
+                      // height: 310,
+                      // width: 1375,
                       child: Image.asset(
-                        AppAssets.icLogin,
-                        width: 200,
+                        AppAssets.icLogo,
+                        width: 2000,
                       ),
+                    ),
+                    Container(
+                      width: 1000,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF1F3949),Color(0xFF3A5A7B)])
+                      ),
+                      child: AppStyle.bold(title: AppStrings.welcomeBack, size: AppSizes.size20, alignment: TextAlign.center, color: AppColors.white),
                     ),
                     Container(
                       width: 1380,
                       decoration: const BoxDecoration(
-                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
+                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF1F3949),Color(0xFF3A5A7B)])
                       ),
-                      child: AppStyle.bold(title: AppStrings.welcomeBack, size: AppSizes.size20, alignment: TextAlign.center),
-                    ),
-                    Container(
-                      width: 1380,
-                      decoration: const BoxDecoration(
-                          gradient: LinearGradient(stops: [0.08,0.91], begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xA30008FF),Color(0xFF00FFCD)])
-                      ),
-                      child: AppStyle.bold(title: AppStrings.weAreExcited, alignment: TextAlign.center),
+                      child: AppStyle.bold(title: AppStrings.weAreExcited, alignment: TextAlign.center, color: AppColors.white),
                     )
                   ],
                 )),

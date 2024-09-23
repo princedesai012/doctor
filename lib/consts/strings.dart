@@ -3,7 +3,7 @@ class AppStrings {
       bestDocapp = "Best Doctor\n Appointment App",
       welcomeBack = "Welcome Back!",
       weAreExcited = "We're excited to have you back!",
-      signupNow = "Sign up now and start exploring all that our app has to offer.",
+      signupNow = "Sign up now and start exploring all that our app has to offer...",
       email = "Email",
       emailHint = "Enter your email...",
       password = "Password",

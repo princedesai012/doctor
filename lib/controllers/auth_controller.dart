@@ -32,6 +32,15 @@ class AuthController extends GetxController{
     }
   }
 
+  Future<bool> resetPassword(String email) async {
+    try {
+      await auth.sendPasswordResetEmail(email: email);
+      return true; // Email sent successfully
+    } catch (e) {
+      print("Error sending password reset email: $e");
+      return false; // Failed to send email
+    }
+  }
 
   isUserAlreadyLoggedIn() async{
      FirebaseAuth.instance.authStateChanges().listen((User? user) async{

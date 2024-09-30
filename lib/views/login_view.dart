@@ -6,6 +6,7 @@ import 'package:doctor/views/appointment_view/appointment_view.dart';
 import 'package:doctor/views/signup_view/signup_view.dart';
 import 'package:get/get.dart';
 
+import 'ForgotPasswordView.dart';
 import 'home_view/home.dart';
 
 class LoginView extends StatefulWidget {
@@ -82,7 +83,12 @@ class _LoginViewState extends State<LoginView> {
                 20.heightBox,
                 Align(
                   alignment: Alignment.centerRight,
-                  child: AppStyle.normal(title: AppStrings.forgetPassword),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(() => const ForgotPasswordView());
+                    },
+                    child: AppStyle.normal(title: AppStrings.forgetPassword),
+                  ),
                 ),
                 20.heightBox,
                 CustomButton(buttonText: AppStrings.login,
@@ -97,7 +103,7 @@ class _LoginViewState extends State<LoginView> {
                       Get.to(()=>const Home());
                     }
                   }
-                }),
+                }), 
                 20.heightBox,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

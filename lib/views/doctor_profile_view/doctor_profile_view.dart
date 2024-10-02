@@ -34,7 +34,7 @@ class DoctorProfileView extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 40,
-                      child: Image.asset(AppAssets.icSignup),
+                      child: Image.asset(AppAssets.icDoctor),
                     ),
                     11.widthBox,
                     Expanded(

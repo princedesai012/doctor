@@ -10,6 +10,7 @@ var iconsList = [
   AppAssets.icLiver,
   AppAssets.icLungs,
   AppAssets.icLogo,
+  AppAssets.icDoctor,
 ];
 
 var iconsTitleList = [

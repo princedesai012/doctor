@@ -9,4 +9,5 @@ class AppAssets {
   static String icLungs = "assets/images/lungs.png";
   static String icLiver = "assets/images/liver.png";
   static String icLogo = "assets/images/DocTime_Logo.png";
+  static String icDoctor = "assets/images/doctor.png";
 }

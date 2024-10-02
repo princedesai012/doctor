@@ -12,7 +12,7 @@ class CategoryView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.blueColor,
         elevation: 0.0,
-        title: AppStyle.bold(title: AppStrings.category, size: AppSizes.size18),),
+        title: AppStyle.bold(title: AppStrings.category, size: AppSizes.size18, color: AppColors.white),),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: GridView.builder(

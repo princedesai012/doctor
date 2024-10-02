@@ -130,7 +130,7 @@ class HomeView extends StatelessWidget {
                                           width: 150,
                                           alignment: Alignment.center,
                                           color: Colors.blue,
-                                          child: Image.asset(AppAssets.icSignup,
+                                          child: Image.asset(AppAssets.icDoctor,
                                             width: 100,
                                             fit: BoxFit.cover,
                                           ),
